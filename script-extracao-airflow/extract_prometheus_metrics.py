@@ -150,7 +150,7 @@ def prometheus_estaleiro_metrics_extraction():
 
         # url_prometheus_error = 'http://localhost:9090/api/v1/query?query=count_over_time(kube_pod_container_status_last_terminated_reason{reason="OOMKilled"}[5m])'
         url_prometheus_error = 'http://localhost:9090/api/v1/query'
-        filter_sql = 'sum(kube_pod_container_status_last_terminated_reason{reason="OOMKilled"}) by (container, namespace)'
+        filter_sql = 'sum(kube_pod_container_status_last_terminated_reason{reason="OOMKilled"}) by (container, namespace, pod)'
         response3 = requests.get(url_prometheus_error, params={'query': filter_sql})
 
         if response3.status_code == 200:
@@ -160,14 +160,16 @@ def prometheus_estaleiro_metrics_extraction():
             file_error = open(f"./dags/data/error_{timestamp}.csv", "a")
             print(f'Criado arquivo de resultado error_{timestamp}')
             for json3 in json_response3['data']['result']:
+                print(json3)
                 try:
                     container = json3['metric']['container']
                     namespace = json3['metric']['namespace']
+                    pod = json3['metric']['pod']
                     system = extract_system_name(namespace)
-                    qtd = json3['value'][1]
+                    qtd = int(json3['value'][1])
                     print(f'Coleta error {container}')
                     if qtd > 0:
-                        file_error.write(f'{system};{namespace};{container};OOMKilled;{qtd}\n')
+                        file_error.write(f'{system};{namespace};{container};{pod};OOMKilled;{qtd}\n')
                 except:
                     print(f'Erro ao realizar o parser de {json3}')
                     print(f'Lendo proximo registro')
@@ -204,9 +206,9 @@ def prometheus_estaleiro_metrics_extraction():
                     namespace = json['metric']['namespace']
                     system = extract_system_name(namespace)
                     pod_name = json['metric']['pod']
-                    cpu_throttled = json['value'][1]
-                    print(f'Escreveu resultado {pod_name} para saida')
+                    cpu_throttled = float(json['value'][1])                    
                     if cpu_throttled > 0:
+                        print(f'Escreveu resultado {pod_name} para saida')
                         file.write(f'{system};{namespace};{container};{pod_name};{cpu_throttled}\n')
                 except:
                     print(f'Erro ao realizar o parser de {json}')
