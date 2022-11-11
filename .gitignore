@@ -1,3 +1,15 @@
 RelatorioTecnico-Frandberto.docx
+RelatorioTecnico-Frandberto.pdf
 notebooks/.ipynb_checkpoints/Untitled-checkpoint.ipynb
 notebooks/Untitled.ipynb
+dados/coletas/cpu/processados/cpu_*.csv
+dados/coletas/memoria/processados/memoria_*.csv
+dados/coletas/error/processados/error_*.csv
+dados/coletas/throttled/processados/cpu_throttled*.csv
+dados/coletas_dia_2/cpu/processados/cpu_*.csv
+dados/coletas_dia_2/memoria/processados/memoria_*.csv
+dados/coletas_dia_2/error/processados/error_*.csv
+dados/coletas_dia_2/throttled/processados/cpu_throttled*.csv
+notebooks/.ipynb_checkpoints/05-treinamento_classificacao-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/06-teste-outro-dataset-checkpoint.ipynb
+
