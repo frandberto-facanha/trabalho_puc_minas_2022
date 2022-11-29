@@ -12,4 +12,14 @@ dados/coletas_dia_2/error/processados/error_*.csv
 dados/coletas_dia_2/throttled/processados/cpu_throttled*.csv
 notebooks/.ipynb_checkpoints/05-treinamento_classificacao-checkpoint.ipynb
 notebooks/.ipynb_checkpoints/06-teste-outro-dataset-checkpoint.ipynb
+RelatorioTecnico-Frandberto.zip
+RelatorioTecnico-Tutoria-Frandberto.docx
+RelatorioTecnico-Tutoria-Frandberto.odt
+RelatorioTecnico-Tutoria-Frandberto.pdf
+RelatorioTecnico-Tutoria-Frandberto.zip
+notebooks/.ipynb_checkpoints/06-teste-dataset-coleta-2-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/07-teste-dataset-coleta-3-checkpoint.ipynb
+notebooks/Arvore_Flavors
+notebooks/Arvore_Decisao_Flavors
+notebooks/.ipynb_checkpoints/*
 

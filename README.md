@@ -58,6 +58,16 @@ A separação do dataset em dados de treinamento e testes, bem como o treinament
 [05-treinamento_classificacao](/notebooks/05-treinamento_classificacao.ipynb).
 O modelo de Árvore de Decisão treinado com critério **entropy**, está salvo no formato pickle em [decision_tree_classifier_entropy.pkl](/notebooks/decision_tree_classifier_entropy.pkl).
 
-O notebook [06-teste-outro-dataset](/notebooks/06-teste-outro-dataset.ipynb) carrega o modelo treinado e realiza predições com dados de teste obtidos de uma coleta de 24 horas realizada em outro dia (**coleta_dia_2**). Depois são obtidas as métricas de avaliação (acurária, precisão, recall).
+Os notebooks [06-teste-dataset-coleta-2](/notebooks/06-teste-dataset-coleta-2.ipynb) e [07-teste-dataset-coleta-3](/notebooks/07-teste-dataset-coleta-3.ipynb) implementam novas avaliações consideram dados coletados de outros dias. Nesses notebooks, é carregado o modelo de árvore de decisão já treinado e salvo no notebook [05-treinamento_classificacao](/notebooks/05-treinamento_classificacao.ipynb) e preparados novos dados coletados que foram utilizados como testes em novas predições.
+Os dados utilizados são proveniente de novas coletas de 24 horas ([coleta_dia_2](/dados/coletas_dia_2) e [coleta_dia_3](/dados/coletas_dia_3)) em outros dias.
 
+### Gráfico da Árvore de Decisão
+
+Foi gerado usando a biblioteva **graphviz** o arquivo pdf da [árvore de decisão](/notebooks/Arvore_Decisao_Flavors.pdf) do modelo treinado.
+
+## Ferramentas Utilizadas
+
+- Airflow versão 2.3.3
+- Anaconda versão 2.3.2
+- Jupyter Notebook versão 6.4.8
 
